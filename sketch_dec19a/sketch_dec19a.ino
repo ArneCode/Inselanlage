@@ -62,8 +62,11 @@ bool isMotorRunning = false;
 void OnStopMotorPressed(){
   static bool isMotorRunning = true;
   isMotorRunning = !isMotorRunning;
+  callHandler.deleteCalls();
   if(isMotorRunning){
-    
+    auto calls = new Callable*[2]{
+        new LcdDotAnim("starte Ventilator",&lcd,1000)
+    }
   }else{
     
   }
